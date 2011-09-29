@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Redmine Redcarpet Wikiヘルプ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <style type="text/css"><!--
+      a.backref { text-decoration: none ; color: black }
+      div.line-block { display: block }
+      div.line-block div.line-block { margin-left: 1.5em }
+
+.underline {
+    text-decoration: underline;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+/* Tables */
+div.wiki table, div.wiki td, 
+div.wiki th {
+border: 1px solid #BBB;
+padding: 4px;
+}
+div.wiki table {
+border: 1px solid #505050;
+border-collapse: collapse;
+margin-bottom: 1em;
+}
+table.docutils {
+margin-top: 0.5em;
+}
+
+
+.header {
+  background-color: lightgray;
+}
+
+.src {
+  background-color: #ffd;
+}
+
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 
+}
+    --></style>
+
+  </head>
+
+  <body>
+<div class="wiki">
+    <h1>Wiki(Redcarpet Formatter)ヘルプ</h1>
+<ul>
+<li><a href="#section">見出し</a>
+<li><a href="#item">箇条書き</a>
+<li><a href="#order">項番号</a>
+<li><a href="#decorate">装飾 (強調、イタリック、コード)</a>
+<li><a href="#redmine">Redmineリンク(チケット、チェンジセットなど)</a>
+<!--<li><a href="#image">画像へのリンク</a>-->
+<li><a href="#table">テーブル</a>
+</ul>
+<hr />
+<h2 name="section">見出し</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="src">
+<pre>
+見出し1
+=========
+
+本文。
+
+見出し2
+---------
+
+見出し2の本文
+
+# 見出し1
+
+## 見出し2
+
+### 見出し3
+</pre>
+</td>
+<td>
+<a name="見出し1"></a> 
+<h1 >見出し1<a href="#見出し1" class="wiki-anchor">&para;</a></h1> 
+
+<p>本文。</p> 
+
+<a name="見出し2"></a> 
+<h2 >見出し2<a href="#見出し2" class="wiki-anchor">&para;</a></h2> 
+   
+<p>見出し2の本文</p> 
+    
+<a name="見出し1"></a> 
+<h1 >見出し1<a href="#見出し1" class="wiki-anchor">&para;</a></h1> 
+     
+<a name="見出し2"></a> 
+<h2 >見出し2<a href="#見出し2" class="wiki-anchor">&para;</a></h2> 
+      
+<a name="見出し3"></a> 
+<h3 >見出し3<a href="#見出し3" class="wiki-anchor">&para;</a></h3>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+見出しにしたい行の下====、-----をつけると見出しになります。先頭に#を入れてもokです。見出しの下は空行を入れてください。
+
+<hr />
+<h2 id="item">箇条書き</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="src">
+<pre>
+
+* レベル1-1
+* レベル1-2
+  これは、レベル1-2の続きです。
+  * レベル1-3
+   * レベル2-1
+    * レベル2-1
+      * レベル3-1
+</pre>
+</td>
+<td>
+<ul> 
+<li>レベル1-1</li> 
+<li>レベル1-2
+これは、レベル1-2の続きです。</li> 
+<li>レベル1-3
+ <ul> 
+ <li>レベル2-1</li> 
+ <li>レベル2-1</li> 
+ <li>レベル3-1</li> 
+ </ul></li> 
+ </ul> 
+</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+<h2 id="order">項番</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="src">
+<pre>
+1. りんご(項号の自動付与)
+2. なし
+   (改行のテスト)
+3. ぶどう
+ 1. デラウェア
+ 1. 巨峰
+4. みかん
+</pre>
+</td>
+<td>
+<ol> 
+<li>りんご(項号の自動付与)</li> 
+<li>なし
+(改行のテスト)</li> 
+<li>ぶどう
+ <ol> 
+ <li>デラウェア</li> 
+ <li>巨峰</li> 
+ </ol></li> 
+ <li>みかん </li>
+</ol> 
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<b>表示イメージ</b>
+<hr />
+
+<h2 id="decorate">装飾</h2>
+
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="src">
+<pre>
+**太字** 、*イタリック* 、
+<ins>下線</ins> 、 <del>取り消し線</del>
+
+
+    // ソースコード(preタグ) 
+    for(int i=0;i&lt;10;i++){   
+        System.out.println("Hello World.");
+    }
+    if(flag==true){
+        ....
+    }
+</pre>
+</td>
+<td>
+<strong>太字</strong> 、 <em>イタリック</em> 、 <span class="underline">下線</span> 、 <span class="strike">取り消し線</span></p>
+<pre>
+//ソースコード(preタグ)
+for(int i=0;i&lt;10;i++){
+    System.out.println(&quot;Hello World.&quot;);
+}
+
+if(flag==true){
+    ....
+}
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+preタグで括る場合は、各行の先頭に空白を4つ入れる。
+
+<hr />
+<h2 id="redmine">Redmineリンク</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<pre>
+Wikiへのリンク         [[WikiName]]
+チケットのリンク       #1
+チェンジセットのリンク r0
+チェンジセットのリンク changeset:9e6b2b783ad7
+ソースコードへのリンク source:test.txt
+ソースコードへのリンク export:test.txt
+添付ファイルへのリンク attanchment:file.zip
+バージョンへのリンク   version:1.0.0
+</pre>
+</td>
+<td>
+<a href="#">WikiName</a><br />
+<a href="#">#1</a><br />
+<a href="#">r0</a><br />
+<a href="#">9e6b2b783ad7</a><br />
+<a href="#">source:test.txt</a><br />
+<a href="#">export:test.txt</a><br />
+<a href="#">attanchment:file.zip</a><br />
+<a href="#">version:1.0.0</a><br />
+</td>
+</tr>
+</tbody>
+</table>
+チェンジセットのrは数字を利用します。GitやMercurialのハッシュを利用する場合は、changeset:を利用してください。
+<hr />
+<!--
+<h2 id="image">画像</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<pre>
+.. image:: /attachments/download/2
+
+.. image:: /attachments/1/imgfile.png
+</pre>
+</td>
+<td>
+省略(画像が表示される)
+</td>
+</tr>
+</tbody>
+</table>
+画像を添付するURL(添付ファイルID)は、添付ファイルのリンクで確認してください。基本的には、/attachments/download/IDの方を使うのがいいと思います。
+
+
+<hr />
+-->
+<h2 id="table">テーブル</h2>
+<table width="90%">
+<thead class="header">
+<tr>
+<th width="50%">ソース(テキスト)</th><th width="50%">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="src">
+
+<pre>
+&lt;table>
+&lt;tr>
+&lt;th>見出し1&lt;/th>&lt;th>見出し1&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>セル1&lt;/td>&lt;td>セル2&lt;/td>
+&lt;/tr>
+&lt;/table>
+</pre>
+
+</td>
+<td>
+
+<table>
+<tr>
+<th>見出し1</th><th>見出し1</th>
+</tr>
+<tr>
+<td>セル1</td><td>セル2</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</tbody>
+
+</table>
+<hr />
+(C)2011 ALMinium Project
+</div>
+  </body>
+</html>

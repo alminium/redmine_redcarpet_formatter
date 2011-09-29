@@ -1,0 +1,33 @@
+/* Styles for ReST */
+
+.underline { text-decoration: underline; }
+.strike { text-decoration: line-through; }
+.overline { text-decoration: overline; }
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
+.rle { direction: rtl; unicode-bidi: embed; }                                                                                                                
+.lre { direction: ltr; unicode-bidi: embed; }                                                                                                                
+
+/* Buttons */
+.jstb_unpre {
+	background-image: url(../images/jstoolbar/bt_unpre.png);
+}
+.jstb_ltr {
+	background-image: url(../images/jstoolbar/bt_ltr.png);
+}
+.jstb_rtl {
+	background-image: url(../images/jstoolbar/bt_rtl.png);
+}
+.flip {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+/* TOC */
+div.wiki ul.toc li.heading4 { margin-left: 18px; font-size: 0.8em; }
+div.wiki ul.toc li.heading5 { margin-left: 24px; font-size: 0.8em; }
+div.wiki ul.toc li.heading6 { margin-left: 30px; font-size: 0.8em; }
