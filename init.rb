@@ -11,6 +11,6 @@ Redmine::Plugin.register :redmine_redcarpet_formatter do
   description 'Markdown wiki formatting by Redcarpet for Redmine'
   version '0.0.2'
 
-  wiki_format_provider 'Markdown', RedmineRedcarpetFormatter::WikiFormatter, RedmineRedcarpetFormatter::Helper
+  wiki_format_provider 'markdown', RedmineRedcarpetFormatter::WikiFormatter, RedmineRedcarpetFormatter::Helper
 
 end
