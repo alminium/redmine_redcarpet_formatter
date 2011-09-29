@@ -4,8 +4,13 @@ module RedmineRedcarpetFormatter
 
     def wikitoolbar_for(field_id)
       heads_for_wiki_formatter
-      url = Redmine::Utils.relative_url_root +
-        Engines::RailsExtensions::AssetHelpers.plugin_asset_path('redmine_redcarpet_formatter', 'help', 'redcarpet_syntax.ja.html')
+      url = nil
+      if current_language.to_s.downcase == 'ja' then
+        url = Redmine::Utils.relative_url_root +
+          Engines::RailsExtensions::AssetHelpers.plugin_asset_path('redmine_redcarpet_formatter', 'help', 'redcarpet_syntax.ja.html')
+      else
+        url = 'http://github.github.com/github-flavored-markdown/'
+      end
       help_link = l(:setting_text_formatting) + ': ' +
         link_to(l(:label_help), url,
         :onclick => "window.open(\"#{url}\", \"\", \"resizable=yes, location=no, width=480, height=640, menubar=no, status=no, scrollbars=yes\"); return false;")
