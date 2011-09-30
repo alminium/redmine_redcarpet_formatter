@@ -198,7 +198,6 @@ jsToolBar.prototype.elements.link = {
 	}
 }
 // image
-/*
 jsToolBar.prototype.elements.img = {
 	type: 'button',
 	title: 'Image',
@@ -211,4 +210,4 @@ jsToolBar.prototype.elements.img = {
                 }
 	}
 }
-*/
+
