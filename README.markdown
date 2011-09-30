@@ -29,19 +29,23 @@ Prerequisites
 
 Installation
 ------------
-
-1.  Install Redcarpet gem. Redcarpet version should be 2.0.0b5 or later.
+1.  Install pygments like:
+<pre>
+# yum install python-pygments
+</pre>
+2.  Install Redcarpet gem and Albino. Redcarpet version should be 2.0.0b5 or later.
 <pre>
 # gem install --version 2.0.0b5 redcarpet
+# gem install albino
 </pre>
-2.  Copy the plugin directory into the vendor/plugins directory
-3.  Run rake at Redmine installed directory.
+3.  Copy the plugin directory into the vendor/plugins directory
+4.  Run rake at Redmine installed directory.
 <pre>
 # RAILS_ENV=production rake db:migrate_plugins
 </pre>
-4.  Start Redmine.
-5.  Installed plugins are listed on 'Admin -> Information' screen.
-6.  Config Wiki engine for 'markdown' on 'Admin -> Settings -> Text formatting' screen.
+5.  Start Redmine.
+6.  Installed plugins are listed on 'Admin -> Information' screen.
+7.  Config Wiki engine for 'markdown' on 'Admin -> Settings -> Text formatting' screen.
 
 
 Credits

@@ -1,0 +1,7 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'highlight', :plugin => 'redmine_redcarpet_formatter' %>
+<% end %>
+
+<div class="wiki">
+  <%= textilizable content, :text, :attachments => content.page.attachments %>
+</div>
