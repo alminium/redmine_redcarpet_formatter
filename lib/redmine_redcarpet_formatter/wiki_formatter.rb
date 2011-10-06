@@ -3,9 +3,13 @@ require 'redcarpet'
 
 class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
   def block_code(code, language)
+    if language != nil 
     "<pre>\n<code class='#{language} syntaxhl'>" \
       + Redmine::SyntaxHighlighting.highlight_by_language(code, language) \
       + "</code>\n</pre>"
+    else 
+      "<pre>\n" + code + "</pre>"
+    end
   end
 end  
 
