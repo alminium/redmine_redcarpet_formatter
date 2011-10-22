@@ -42,6 +42,16 @@ Installation
 5.  Installed plugins are listed on 'Admin -> Information' screen.
 6.  Config Wiki engine for 'markdown' on 'Admin -> Settings -> Text formatting' screen.
 
+Caution
+-------
+source: link is broken with original redcarpet gem.
+Our fork resolved this problem. Install the fork:
+
+<pre>
+# git clone https://github.com/alminium/redcarpet.git
+# cd redcarpet
+# rake install
+</pre>
 
 Credits
 -------
