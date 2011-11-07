@@ -56,6 +56,7 @@ Our fork resolved this problem. Install the fork:
 Credits
 -------
 
+*  mikoto20000 (http://github.com/mikoto20000) develop redmine_redcarpet_formatter
 *  Yuki Sonoda (http://github.com/yugui) did the real work by creating the redmine_rd_formatter
 *  Larry Baltz (https://github.com/bitherder/) did develop redmine_markdown_formatter
 *  william melody(https://github.com/alphabetum) develop redmine_restrucutedtext_formatter
