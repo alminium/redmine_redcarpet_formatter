@@ -65,5 +65,5 @@ Suggestions, Bugs, Refactoring?
 -------------------------------
 
 Fork away and create a Github Issue. Pull requests are welcome.
-http://github.com/juno/redmine_markdown_extra_formatter/tree/master
+https://github.com/alminium/redmine_redcarpet_formatter
 
