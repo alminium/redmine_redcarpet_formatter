@@ -11,6 +11,9 @@ class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
       "<pre>\n" + code + "</pre>"
     end
   end
+  def block_quote(quote)
+    "<blockquote>\n" << quote.gsub(/\n([^<])/,'<br>\1') << "</blockquote>\n"
+  end
 end  
 
 module RedmineRedcarpetFormatter
