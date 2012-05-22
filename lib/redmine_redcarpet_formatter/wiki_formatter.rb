@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+require 'cgi'
 require 'redcarpet'
 
 class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
@@ -8,7 +9,7 @@ class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
         + Redmine::SyntaxHighlighting.highlight_by_language(code, language) \
         + "</code>\n</pre>"
     else 
-      "<pre>\n" + code + "</pre>"
+      "<pre>\n" + CGI.escapeHTML(code) + "</pre>"
     end
   end
   def block_quote(quote)
