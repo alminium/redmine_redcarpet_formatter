@@ -20,7 +20,7 @@ end
 
 module Redmine
 module WikiFormatting
-module Redcarpet
+module Markdown
   class Formatter
     #    include ActionView::Helpers::TagHelper
 

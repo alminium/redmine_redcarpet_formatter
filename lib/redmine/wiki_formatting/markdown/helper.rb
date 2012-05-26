@@ -1,9 +1,9 @@
 module Redmine
   module WikiFormatting
             
-module Redcarpet
+module Markdown
   module Helper
-#    unloadable
+    unloadable
 
     def wikitoolbar_for(field_id)
       heads_for_wiki_formatter
