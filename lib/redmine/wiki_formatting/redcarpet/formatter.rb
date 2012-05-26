@@ -2,6 +2,7 @@
 require 'cgi'
 require 'redcarpet'
 
+
 class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
   def block_code(code, language)
     if language != nil 
@@ -17,8 +18,10 @@ class HTMLwithSyntaxHighlighting < Redcarpet::Render::HTML
   end
 end  
 
-module RedmineRedcarpetFormatter
-  class WikiFormatter
+module Redmine
+module WikiFormatting
+module Redcarpet
+  class Formatter
     #    include ActionView::Helpers::TagHelper
 
     def initialize(text)
@@ -96,4 +99,6 @@ module RedmineRedcarpetFormatter
       [before, selected, after].map{|x| x.join.strip}
     end
   end
+end
+end
 end

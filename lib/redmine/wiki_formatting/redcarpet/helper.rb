@@ -1,10 +1,14 @@
-module RedmineRedcarpetFormatter
+module Redmine
+  module WikiFormatting
+            
+module Redcarpet
   module Helper
-    unloadable
+#    unloadable
 
     def wikitoolbar_for(field_id)
       heads_for_wiki_formatter
-      url = Engines::RailsExtensions::AssetHelpers.plugin_asset_path('redmine_redcarpet_formatter', 'help', 'markdown_wiki_syntax.html')
+      url = "#{::Redmine::Utils.relative_url_root}/help/markdown_wiki_syntax.html"      
+#      url = Engines::RailsExtensions::AssetHelpers.plugin_asset_path('redmine_redcarpet_formatter', 'help', 'markdown_wiki_syntax.html')
       help_link = l(:setting_text_formatting) + ': ' +
         link_to(l(:label_help), url,
         :onclick => "window.open(\"#{url}\", \"\", \"resizable=yes, location=no, width=480, height=640, menubar=no, status=no, scrollbars=yes\"); return false;")
@@ -36,4 +40,6 @@ module RedmineRedcarpetFormatter
       end
     end
   end
+end
+end
 end
