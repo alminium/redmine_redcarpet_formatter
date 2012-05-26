@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_redcarpet_formatter do
   name 'Redcarpet Markdown Wiki formatter'
   author 'Mikoto Misaka'
   description 'Markdown wiki formatting by Redcarpet for Redmine'
-  version '1.9.0'
+  version '1.9.2'
 
   wiki_format_provider 'markdown', Redmine::WikiFormatting::Markdown::Formatter, Redmine::WikiFormatting::Markdown::Helper
 
