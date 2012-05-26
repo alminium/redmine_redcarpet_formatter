@@ -7,7 +7,7 @@ module Redmine
 
         def wikitoolbar_for(field_id)
           heads_for_wiki_formatter
-          url = "#{::Redmine::Utils.relative_url_root}/plugin_assets/redmine_redcarpet_formatter/help/markdown_wiki_syntax.html"      
+          url = "#{::Redmine::Utils.relative_url_root}/plugin_assets/redmine_redcarpet_formatter/help/wiki_syntax.html"      
           help_link = l(:setting_text_formatting) + ': ' +
             link_to(l(:label_help), url,
                     :onclick => "window.open(\"#{url}\", \"\", \"resizable=yes, location=no, width=480, height=640, menubar=no, status=no, scrollbars=yes\"); return false;")
