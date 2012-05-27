@@ -1,3 +1,1 @@
-source :rubygems
-
-gem "redcarpet"
+gem "redcarpet", :git => "https://github.com/alminium/redcarpet.git"
