@@ -63,7 +63,7 @@ module Redmine
           selected_level = 0
           header_count = 0
 
-          @text.each do |line|
+          @text.each_line do |line|
 
             if line =~ /^(~~~|```)/
               pre = pre == :pre ? :none : :pre
