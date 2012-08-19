@@ -12,7 +12,7 @@ module Redmine
             link_to(l(:label_help), url,
                     :onclick => "window.open(\"#{url}\", \"\", \"resizable=yes, location=no, width=480, height=640, menubar=no, status=no, scrollbars=yes\"); return false;")
           javascript_tag(<<-EOD);
-      var toolbar = new jsToolBar($('#{field_id}'));
+      var toolbar = new jsToolBar(document.getElementById('#{field_id}'));
       toolbar.setHelpLink('#{help_link}');
       toolbar.draw();
       EOD
