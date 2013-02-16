@@ -55,18 +55,9 @@ Checkout your version. This example is for Redmine 2.x:
  * vendor/plugins directory (for Redmine 1.x)
  * plugins/ directory (for Redmine 2.x)
 
-4.  Run rake at Redmine installed directory.
-
-```
-    [for Redmine 1.x]
-    # RAILS_ENV=production rake db:migrate_plugins
-    [for Redmine 2.x]
-    # RAILS_ENV=production rake redmine:plugins:migrate
-```
-
-5.  Restart Redmine.
-6.  Installed plugins are listed on 'Admin -> Information' screen.
-7.  Config Wiki engine for 'markdown' on 'Admin -> Settings -> Text formatting' screen.
+4.  Restart Redmine.
+5.  Installed plugins are listed on 'Admin -> Information' screen.
+6.  Config Wiki engine for 'markdown' on 'Admin -> Settings -> Text formatting' screen.
 
 Caution
 -------
