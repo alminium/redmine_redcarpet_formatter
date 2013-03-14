@@ -47,7 +47,7 @@ module Redmine
 
         def to_html(&block)
           markdown = ::Redcarpet::Markdown.new(
-            HTMLwithSyntaxHighlighting,
+            HTMLwithSyntaxHighlighting.new(:hard_wrap => true),
             :autolink => true,
             :space_after_headers => true,
             :fenced_code_blocks => true,
