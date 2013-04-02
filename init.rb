@@ -24,8 +24,12 @@ Redmine::Plugin.register :redmine_redcarpet_formatter do
   name 'Redcarpet Markdown Wiki formatter'
   author 'Mikoto Misaka'
   description 'Markdown wiki formatting by Redcarpet for Redmine'
-  version '2.0.1'
+  version '2.1'
 
   wiki_format_provider 'markdown', Redmine::WikiFormatting::Markdown::Formatter, Redmine::WikiFormatting::Markdown::Helper
+
+  settings :default => {
+    'enable_hardwrap' => '1',
+  }, :partial =>'settings/redmine_redcarpet_formatter_settings'
 
 end

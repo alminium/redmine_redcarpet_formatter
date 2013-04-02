@@ -46,8 +46,9 @@ module Redmine
         end
 
         def to_html(&block)
+          enable_hardwrap = Setting.plugin_redmine_redcarpet_formatter['enable_hardwrap'] == '1'
           markdown = ::Redcarpet::Markdown.new(
-            HTMLwithSyntaxHighlighting.new(:hard_wrap => true),
+            HTMLwithSyntaxHighlighting.new(:hard_wrap => enable_hardwrap),
             :autolink => true,
             :space_after_headers => true,
             :fenced_code_blocks => true,
