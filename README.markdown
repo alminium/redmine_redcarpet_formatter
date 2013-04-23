@@ -39,10 +39,10 @@ Installation
 
 ``` 
     $ git clone https://github.com/alminium/redmine_redcarpet_formatter.git
-    $ git tags
+    $ git tag
     ...
     v1.1.1    // for Redmine 1.x
-    v2.0.0    // for Redmine 2.x
+    v2.0.1    // for Redmine 2.x
 ```
 
 v1.x.x series is for Redmine 1.x. v2.x.x series is for Redmine 2.x. Please
