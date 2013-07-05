@@ -3,4 +3,8 @@
   <lable><%= l(:label_enable_hardwrap)%></label>
   <%= check_box_tag('settings[enable_hardwrap]', 1, @settings['enable_hardwrap'] == '1') %>
 </p>
+<p>
+  <lable><%= l(:label_enable_no_intra_emphasis)%></label>
+  <%= check_box_tag('settings[enable_no_intra_emphasis]', 1, @settings['enable_no_intra_emphasis'] == '1') %>
+</p>
 </fieldset>

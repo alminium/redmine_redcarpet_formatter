@@ -30,6 +30,7 @@ Redmine::Plugin.register :redmine_redcarpet_formatter do
 
   settings :default => {
     'enable_hardwrap' => '1',
+    'enable_no_intra_emphasis' => '1',
   }, :partial =>'settings/redmine_redcarpet_formatter_settings'
 
 end
