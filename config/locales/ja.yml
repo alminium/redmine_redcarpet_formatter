@@ -1,2 +1,3 @@
 ja:
   label_enable_hardwrap: テキストの改行で改行(hard wrap)
+  label_enable_no_intra_emphasis: 単語中の強調を解釈しない(no intra emphasis)

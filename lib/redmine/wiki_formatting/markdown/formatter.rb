@@ -33,6 +33,34 @@ class HTMLwithSyntaxHighlighting < ::Redcarpet::Render::HTML
   def block_quote(quote)
     "<blockquote>\n" << quote.gsub(/\n([^<])/,'<br>\1') << "</blockquote>\n"
   end
+  def normal_text(text)
+    if !@in_redminelink
+      (a, begin_quot, b) = text.partition(':"')
+      out = CGI::escapeHTML(a)
+      if !begin_quot.empty?
+        (b, end_quot, c) = b.partition('"')
+        out += begin_quot + b
+        if !end_quot.empty?
+          out += end_quot + normal_text(c)
+        else
+          @in_redminelink = true
+        end
+      end
+      return out
+    else
+      (a, end_quot, b) = text.partition('"')
+      if !end_quot.empty?
+        @in_redminelink = false
+        return a + end_quot + normal_text(b)
+      end
+      (a, nl, b) = text.partition('\n')
+      if !nl.empty?
+        @in_redminelink = false
+        return a + nl + normal_text(b)
+      end
+      return a
+    end
+  end
 end  
 
 module Redmine
@@ -47,6 +75,7 @@ module Redmine
 
         def to_html(&block)
           enable_hardwrap = Setting.plugin_redmine_redcarpet_formatter['enable_hardwrap'] == '1'
+          enable_no_intra_emphasis = Setting.plugin_redmine_redcarpet_formatter['enable_no_intra_emphasis'] == '1'
           markdown = ::Redcarpet::Markdown.new(
             HTMLwithSyntaxHighlighting.new(:hard_wrap => enable_hardwrap),
             :autolink => true,
@@ -55,7 +84,7 @@ module Redmine
             :tables => true,
             :strikethrough => true,
             :superscript => true,
-            :no_intra_emphasis => true
+            :no_intra_emphasis => enable_no_intra_emphasis
           )
           markdown.render(@text)
         rescue => e
